@@ -297,7 +297,8 @@ convertTimeToTicks:
     sla c      ;(4*2=8)
     sla c      ;(8*2=16)
     sla c      ;(16*2=32)
-    add c, 28  ;(32+28=60)
+    ld a, 28   ;(a=28)
+    add a, c   ;((c=32)+(a=28)=60)
     add d, c
     ld de, c
     ret
