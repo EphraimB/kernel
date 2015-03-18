@@ -292,14 +292,14 @@ _:
 ;; Notes:
 ;;  This is unimplemented.
 convertTimeToTicks:
-    sll c      ;multiply current minute by 2 (ex: 1*2=2)
-    sll c      ;(2*2=4)
-    sll c      ;(4*2=8)
-    sll c      ;(8*2=16)
-    sll c      ;(16*2=32)
+    sla c      ;multiply current minute by 2 (ex: 1*2=2)
+    sla c      ;(2*2=4)
+    sla c      ;(4*2=8)
+    sla c      ;(8*2=16)
+    sla c      ;(16*2=32)
     add c, 28  ;(32+28=60)
     add d, c
-    ld de, a
+    ld de, c
     ret
     
 ;; getTime [Time]
