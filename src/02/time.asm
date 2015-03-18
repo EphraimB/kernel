@@ -292,7 +292,14 @@ _:
 ;; Notes:
 ;;  This is unimplemented.
 convertTimeToTicks:
-    ; TODO
+    sll c      ;multiply current minute by 2 (ex: 1*2=2)
+    sll c      ;(2*2=4)
+    sll c      ;(4*2=8)
+    sll c      ;(8*2=16)
+    sll c      ;(16*2=32)
+    add c, 28  ;(32+28=60)
+    add d, c
+    ld de, a
     ret
     
 ;; getTime [Time]
