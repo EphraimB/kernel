@@ -21,7 +21,7 @@ clockSupported:
 ;;   A: Preserved on success, error code on failure
 ;;   Z: Set on success, reset on failure
 setClock:
-#ifndef CLOCK
+#ifndef CLOCK 
     ld a, errUnsupported
     or a
     ret
