@@ -294,9 +294,11 @@ _:
 convertTimeToTicks:
     push bc
     ld a, c    ; (ex: a=1 c=1)
+minuteLoop:
     add a, c   ; (ex: 1+1=2)
     ld b, 61
-    djnz
+    djnz minuteLoop
+multiplyMinute:
     pop bc
     add a, d   ; Minutes+Seconds
     ld d, a
