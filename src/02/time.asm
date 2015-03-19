@@ -299,7 +299,7 @@ convertTimeToTicks:
     djnz
     pop bc
     add a, d   ; Minutes+Seconds
-    ld de, a
+    ld d, a
     ret
     
 ;; getTime [Time]
